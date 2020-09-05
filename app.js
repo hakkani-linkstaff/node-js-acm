@@ -7,14 +7,16 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // routes
-const adminRoutes = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 // body parser
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Serving static or HTML rendering pages
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.routes);
 app.use(shopRoutes);
 
 // 404 page not found
