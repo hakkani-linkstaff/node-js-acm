@@ -9,14 +9,21 @@ const products = [];
 // route.use((req, res, next) => {...})
 // /admin/add-product => GET
 router.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(rootDirectory, "./views", "/add-product.html"));
+  //res.sendFile(path.join(rootDirectory, "views", "/add-product.html"));
+  res.render("add-product", {
+    pageTitle: "Add Product",
+    path: "/admin/add-product",
+  });
 });
 
 // route.use((req, res, next) => {...})
 // /admin/add-product => POST
 router.post("/add-product", (req, res, next) => {
   console.log(req.body);
-  products.push({ title: req.body.title });
+
+  const { title, description, price } = req.body;
+  products.push({ title, description, price });
+
   res.redirect("/");
 });
 

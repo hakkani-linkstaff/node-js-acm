@@ -26,6 +26,7 @@ main {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .main-header__item-list {
@@ -62,6 +63,10 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
+.product-item {
+  margin: 0.5rem 0;
+}
+
 .card__header,
 .card__content {
   padding: 1rem;
@@ -83,13 +88,13 @@ main {
 }
 
 .card__actions {
-    padding: 1rem;
-    text-align: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 .card__actions button,
 .card__actions a {
-    margin: 0 0.25rem;
+  margin: 0 0.25rem;
 }
 
 .btn {

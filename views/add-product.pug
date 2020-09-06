@@ -1,0 +1,20 @@
+extends layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/forms.css")
+    link(rel="stylesheet" href="/css/product.css")
+
+block contents
+    main 
+        form.product-form(action="/admin/add-product" method="POST")
+            .form-control
+                label(for="title") Title
+                input(type="text" name="title" id="title" placeholder="Enter Title...")
+
+                label(for="description") Description
+                textarea(cols="3" rows="3" name="description" id="description" placeholder="Enter Description...")
+
+                label(for="price") Price
+                input(type="number" name="price" id="price" placeholder="Enter Price...")
+
+            button.btn(type="submit") Add Product
