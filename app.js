@@ -6,6 +6,10 @@ const bodyParser = require("body-parser");
 // express sever
 const app = express();
 
+// config template engine
+app.set("view engine", "pug");
+app.set("views", "views");
+
 // routes
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
